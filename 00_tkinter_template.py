@@ -2,7 +2,7 @@ from tkinter import *
 import random
 
 
-class Converter:
+class Converter
     def __init__(self, parent):
         print("hello world")
 
