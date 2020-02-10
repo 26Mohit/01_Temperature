@@ -39,6 +39,22 @@ class Help:
         # disable help button
         partner.help_button.config(state=DISABLED)
 
+        # Sets up child window (i.e: help box)
+        self.help_box = Toplevel()
+
+        # Set up GUI Frame
+        self.help_frame = Frame(self.help_box, bg=background)
+        self.help_frame.grid()
+
+        # Set up Help heading (row)
+        self.how_heading = Label(self.help_frame,text="help/Instruction",
+                                 font="arial 10 bold", bg=background)
+        self.how_heading.grid(row=0)
+        # Help text (label, row 1)
+
+        # Dismiss button ( row 2)
+
+
 
 
 
