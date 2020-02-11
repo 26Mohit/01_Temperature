@@ -50,9 +50,16 @@ class Help:
         self.how_heading = Label(self.help_frame,text="help/Instruction",
                                  font="arial 10 bold", bg=background)
         self.how_heading.grid(row=0)
+
         # Help text (label, row 1)
+        self.help_text = Label(self.help_frame, text="",
+                               justify=LEFT, width=40, bg=background, wrap=250)
+        self.help_text.grid(row=1)
 
         # Dismiss button ( row 2)
+        self.dismiss_btn =Button(self.help_frame, text="Dismiss", width=10, bg=background,
+                                 command=partial(self.close_help, partner))
+        self.dismiss_btn.grid(row=2, pady=10)
 
 
 
