@@ -22,14 +22,14 @@ class Converter:
         self.temp_converter_label.grid(row=0)
 
         # Help Button (row 1)
-        self.help_button = Button(self.converter_frame, text="help", padx=10, pady=10)
+        self.help_button = Button(self.converter_frame, text="help", padx=10, pady=10, command=self.get_help)
         self.help_button.grid(row=1)
 
-
-    def Help(self):
+    def get_help(self):
          print("You asked for help)")
          get_help = Help(self)
          get_help.help_text.configure(text="help text goes here")
+
 
 class Help:
     def __init__(self,partner):
@@ -41,6 +41,10 @@ class Help:
 
         # Sets up child window (i.e: help box)
         self.help_box = Toplevel()
+
+        # if users press cross at top, closes help and 'releases' help button
+        self.help_box.protocol('WM_DELETE_WINDOW', partial(self.close_help, partner))
+
 
         # Set up GUI Frame
         self.help_frame = Frame(self.help_box, bg=background)
@@ -57,12 +61,14 @@ class Help:
         self.help_text.grid(row=1)
 
         # Dismiss button ( row 2)
-        self.dismiss_btn =Button(self.help_frame, text="Dismiss", width=10, bg=background,
+        self.dismiss_btn =Button(self.help_frame, text="Dismiss",
+                                 width=10, bg=background,
                                  command=partial(self.close_help, partner))
         self.dismiss_btn.grid(row=2, pady=10)
 
-
-
+    def close_help(self, partner):
+        # Put help back to normal...
+        partner.help_button.config(state=NORMAL)
 
 
 
