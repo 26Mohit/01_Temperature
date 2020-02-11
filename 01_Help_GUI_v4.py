@@ -23,7 +23,7 @@ class Converter:
 
         # Help Button (row 1)
         self.help_button = Button(self.converter_frame, text="help", padx=10, pady=10, command=self.get_help)
-        self.help_button.grid(row=1)
+        self.help_button.grid(row=1, pady=10)
 
     def get_help(self):
          print("You asked for help)")
@@ -44,7 +44,6 @@ class Help:
 
         # if users press cross at top, closes help and 'releases' help button
         self.help_box.protocol('WM_DELETE_WINDOW', partial(self.close_help, partner))
-
 
         # Set up GUI Frame
         self.help_frame = Frame(self.help_box, bg=background)
@@ -69,6 +68,7 @@ class Help:
     def close_help(self, partner):
         # Put help back to normal...
         partner.help_button.config(state=NORMAL)
+        self.help_box.destroy()
 
 
 
