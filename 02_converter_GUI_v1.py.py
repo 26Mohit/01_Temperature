@@ -15,8 +15,21 @@ class Converter:
         self.coverter_frame.grid()
 
         # Temperature Converter Heading (row 0)
+        self.temp_heading_label = Label(self.converter_frame,
+                                        text="Temperature Converter",
+                                          font="Arial 16 bold",
+                                          bg=background_color,
+                                          padx=10, pady=10)
 
         # User instruction (row 1)
+        self.temp_instructions_label = label(self.converter_frame,
+                                             text="Type in the amount to be"
+                                                  "converter and then push"
+                                                  "one of the buttons below...",
+                                             font="Arial 10 italic", wrap=250,
+                                             justify=LEFT, bg=background_color,
+                                             padx=10, pady=10)
+        self.temp_instruction_label.grid(row=1)
 
         # Temperature entry box (row 2)
 
@@ -25,12 +38,12 @@ class Converter:
         # Answer label (row 4)
 
         # History / Help button frame (row 5)
-        print("hello world")
+
 
 
 # main routine
 if __name__ == "__main__":
     root = Tk()
-    root.title("title goes here")
-    something = Foo(root)
+    root.title("Temperature Converter")
+    something = Converter(root)
     root.mainloop()
