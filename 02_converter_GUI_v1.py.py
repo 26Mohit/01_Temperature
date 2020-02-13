@@ -10,6 +10,9 @@ class Converter:
         background_color = "light blue"
 
         # Converter Frame
+        self.converter_frame = Frame(width=300, bg=background_color,
+                                     pady=10)
+        self.coverter_frame.grid()
 
         # Temperature Converter Heading (row 0)
 
@@ -20,6 +23,8 @@ class Converter:
         # Conversion buttons frame (row 3)
 
         # Answer label (row 4)
+
+        # History / Help button frame (row 5)
         print("hello world")
 
 
