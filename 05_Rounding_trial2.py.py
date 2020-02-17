@@ -13,3 +13,4 @@ for item in to_round:
         print("{:.0f}". format(item))
     else:
         print("{:.1f}".format(item))
+
