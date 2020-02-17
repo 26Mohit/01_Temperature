@@ -1,15 +1,15 @@
-from tkinter import *
-import random
+# Display output using int / float
 
 
-class Converter
-    def __init__(self, parent):
-        print("hello world")
+to_round = [1/1, 1/2, 1/3]
+print("**** Numbers to round ****")
+print(to_round)
 
+print()
+print("**** Rounded Numbers ****")
 
-# main routine
-if __name__ == "__main__":
-    root = Tk()
-    root.title("Temperature Converter")
-    something = Converter(root)
-    root.mainloop()
+for item in to_round:
+    if item%1 == 0:
+        print("{:.0f}". format(item))
+    else:
+        print("{:.1f}".format(item))
