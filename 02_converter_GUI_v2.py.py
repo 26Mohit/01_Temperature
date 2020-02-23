@@ -9,6 +9,9 @@ class Converter:
         # Formatting variables
         background_color = "light blue"
 
+        # Initialise list to hold calculation history
+        self.all_calculations = []
+
         # Converter Frame
         self.converter_frame = Frame(width=300, bg=background_color,
                                      pady=10)
@@ -108,7 +111,11 @@ class Converter:
             else:
                 self.converter_label.configure(text=answer, fg="red")
                 self.to_convert_entry.configure(bg=error)
+
             # Add Answer to list for History
+            if answer != "Too Cold":
+                self.all_calculations.append(answer)
+                print(self.all_calculations)
 
         except ValueError:
             self.converter_label.configure(text="Enter a number!!", fg="red")
