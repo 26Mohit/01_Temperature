@@ -35,4 +35,4 @@ else:
     else:
         print("*** Items from Newest to Oldest ****")
         for item in all_calculations:
-            print(all_calculations[len(all_calculations) - all_calculations.index])
+            print(all_calculations[len(all_calculations) - all_calculations.index(item)])
