@@ -60,7 +60,7 @@ class Help:
         self.help_text.grid(row=1)
 
         # Dismiss button ( row 2)
-        self.dismiss_btn =Button(self.help_frame, text="Dismiss",
+        self.dismiss_btn = Button(self.help_frame, text="Dismiss",
                                  width=10, bg=background,
                                  command=partial(self.close_help, partner))
         self.dismiss_btn.grid(row=2, pady=10)
