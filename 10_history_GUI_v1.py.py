@@ -30,7 +30,7 @@ class Converter:
         # history Button (row 1)
         self.history_button = Button(self.converter_frame, text="History",
                                      padx=10, pady=10,
-                                     command=lambda: self.get_history(self.all_calc_list))
+                                     command=lambda: self.history(self.all_calc_list))
         self.history_button.grid(row=1, pady=10)
 
     def get_history(self, calc_history):
