@@ -5,7 +5,7 @@ import random
 
 
 class Converter:
-    def __init__(self, parent):
+    def __init__(self, parent,):
 
         # Formatting variables...
         background_color= "light blue"
@@ -27,10 +27,11 @@ class Converter:
                                         padx=10, pady=10)
         self.temp_converter_label.grid(row=0)
 
-        # history Button (row 1)
+        # History Button (row 1)
         self.history_button = Button(self.converter_frame, text="History",
+                                     font=("Arial", "14"),
                                      padx=10, pady=10,
-                                     command=lambda: self.history(self.all_calc_list))
+                                     command=lambda: self.get_history(self.all_calc_list))
         self.history_button.grid(row=1, pady=10)
 
     def get_history(self, calc_history):
@@ -92,9 +93,9 @@ class History:
                                               "desired.")
 
         # Label to display calculation history to user
-        self.calc_label = Label(slef.history-frame, text=history_string,
-                                bg=background, font="Arial 12", hustify=LEFT)
-        self.clac_label.grid(row=2)
+        self.calc_label = Label(self.history_frame, text=history_string,
+                                bg=background, font="Arial 12", justify=LEFT)
+        self.calc_label.grid(row=2)
 
         # Export / Dismiss Buttons frame (row 3)
         self.export_dismiss_frame = Frame(self.history_frame)
@@ -106,10 +107,10 @@ class History:
         self.export_button.grid(row=0, column=0)
 
         # Dismiss button
-        self.dismiss_btn =Button(self.history_frame, text="Dismiss",
-                                 width=10, bg=background, font="arial 12 bold",
-                                 command=partial(self.close_history, partner))
-        self.dismiss_btn.grid(row=2, pady=10)
+        self.dismiss_button = Button(self.export_dismiss_frame, text="Dismiss",
+                                     font="Arial 12 bold",
+                                     command=partial(self.close_history, partner))
+        self.dismiss_button.grid(row=0, column=1)
 
     def close_history(self, partner):
         # Put history back to normal...
