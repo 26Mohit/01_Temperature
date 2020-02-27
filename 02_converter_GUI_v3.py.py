@@ -70,6 +70,9 @@ class Converter:
                                      command=lambda: self.get_history(self.all_calc_list))
         self.history_button.grid(row=0, column=0)
 
+        if len(self.all_calc_list) ==0:
+            self.history_button.config(state=DISABLED)
+
         self.help_button = Button(self.hist_help_frame, font="Arial 12 bold",
                                   text="Help", width=5)
         self.help_button.grid(row=0, column=1)
