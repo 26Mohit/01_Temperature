@@ -22,19 +22,18 @@ class Converter:
         self.temp_converter_label.grid(row=0)
 
         # export Button (row 1)
-        self.export_button = Button(self.converter_frame, text="export", padx=10, pady=10, command=self.get_export)
-        self.export_button.grid(row=1, pady=10)
+        self.export_button = Button(self.converter_frame, text="Export", font=("Arial", "14"),
+                                    padx=10, pady=10, command=self.get_export)
+        self.export_button.grid(row=1)
 
     def get_export(self):
-        print("You asked for export)")
         get_export = Export(self)
-        get_export.export_text.configure(text="export text goes here")
 
 
 class Export:
     def __init__(self,partner):
 
-        background = "orange"
+        background = "#a9ef99"    # Pale green
 
         # disable export button
         partner.export_button.config(state=DISABLED)
@@ -79,7 +78,7 @@ class Export:
         self.export_text.grid(row=2, pady=10)
 
         # Filename Entry box (row 3)
-        self.filename_entry = Entry(self.export-frame, width=20,
+        self.filename_entry = Entry(self.export_frame, width=20,
                                     font="Arial 14 bold", justify=CENTER)
         self.filename_entry.grid(row=3, pady=10)
 
@@ -91,16 +90,9 @@ class Export:
         self.save_button = Button(self.save_cancel_frame, text="Save")
         self.save_button.grid(row=0, column=0)
 
-        # export text (label, row 1)
-        self.export_text = Label(self.export_frame, text="",
-                                 justify=LEFT, width=40, bg=background, wrap=250)
-        self.export_text.grid(row=1)
-
-        # Dismiss button ( row 2)
-        self.dismiss_btn = Button(self.export_frame, text="Dismiss",
-                                  width=10, bg=background,
-                                  command=partial(self.close_export, partner))
-        self.dismiss_btn.grid(row=2, pady=10)
+        self.cancel_button = Button(self.save_cancel_frame, text="Cancel",
+                                    command=partial(self.close_export, partner))
+        self.cancel_button.grid(row=0, column=1)
 
     def close_export(self, partner):
         # Put export back to normal...
