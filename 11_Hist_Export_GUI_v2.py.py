@@ -11,7 +11,7 @@ class Converter:
         background_color = "light blue"
 
         # In actual program this is blank and is populated with user calculations
-        self.all_calc_list = ['5 degrees C is -17.8 degrees F',
+        self.all_calc_list = ['5 degrees C is -17.2 degrees F',
                               '6 degrees C is -16.7 degrees F',
                               '7 degrees C is -16.1 degrees F',
                               '8 degrees C is -15.8 degrees F',
@@ -131,6 +131,9 @@ class History:
 
 class Export:
     def __init__(self, partner, calc_history):
+
+        print(calc_history)
+
         background = "#a9ef99"  # Pale green
 
         # disable export button
