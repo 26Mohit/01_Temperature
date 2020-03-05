@@ -117,7 +117,7 @@ class Converter:
                 self.to_convert_entry.configure(bg=error)
 
             # Add Answer to list for History
-            if has_errors != "Yes":
+            if has_errors != "yes":
                 self.all_calc_list.append(answer)
                 self.history_button.config(state=NORMAL)
 
