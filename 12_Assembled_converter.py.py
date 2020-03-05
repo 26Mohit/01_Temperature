@@ -214,7 +214,8 @@ class History:
 
             # Export Button
             self.export_button = Button(self.export_dismiss_frame, text="Export",
-                                        font="Arial 12 bold")
+                                        font="Arial 12 bold",
+                                        command=lambda: self.export(calc_history))
             self.export_button.grid(row=0, column=0)
 
             # Dismiss button
